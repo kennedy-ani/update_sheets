@@ -4,7 +4,6 @@ import cors from 'cors';
 import credentials from "./credentials/trkf-385922-ac9d63310aaa.json" assert{type : 'json'};
 const app = express();
 
-// app.use(cors)
 app.use(function(req, res, next){
     res.header('Access-Control-Allow-Origin', 'https://update-sheets.vercel.app/')
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
@@ -12,6 +11,7 @@ app.use(function(req, res, next){
     next()
 }); //allows access for all routes in your app
 app.use(express.json());
+app.use(cors(app))
 
 const scope = ['https://www.googleapis.com/auth/spreadsheets'];//spreadsheet scope 
 
