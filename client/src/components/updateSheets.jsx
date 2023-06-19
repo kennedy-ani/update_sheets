@@ -31,7 +31,7 @@ export const UpdateSheets = ()=>{
     const putData = async (event) => {
         event.preventDefault()
 
-        axios.put('http://localhost:5000', {
+        axios.put('https://update-sheets-api.vercel.app/', {
             sheetId: sheetsId,
             sheetRange: range,
             sheetValue: value
