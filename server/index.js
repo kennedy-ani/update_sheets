@@ -13,17 +13,18 @@ app.use(function(req, res, next){
 app.use(express.json());
 // app.use(cors(app))
 
-let accessCredentials = credentials
 
 const scope = ['https://www.googleapis.com/auth/spreadsheets'];//spreadsheet scope 
+const accessCredentials_email = credentials.client_email
+const accessCredentials_pk = credentials.private_key
 
 
 const authSheets = async() => {
     
     const auth = new google.auth.JWT(
-        accessCredentials.client_email,
+        accessCredentials_email,
         null,
-        accessCredentials.private_key,
+        accessCredentials_pk,
         scope
     );
     
