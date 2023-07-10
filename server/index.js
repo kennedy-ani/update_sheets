@@ -11,7 +11,7 @@ app.use(function(req, res, next){
     next()
 }); //allows access for all routes in your app
 app.use(express.json());
-app.use(cors(app))
+// app.use(cors(app))
 
 const scope = ['https://www.googleapis.com/auth/spreadsheets'];//spreadsheet scope 
 
