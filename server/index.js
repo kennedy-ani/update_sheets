@@ -22,9 +22,9 @@ const accessCredentials_pk = credentials.private_key
 const authSheets = async() => {
     
     const auth = new google.auth.JWT(
-        accessCredentials_email,
+        process.env.accessCredentials_email,
         null,
-        accessCredentials_pk,
+        process.env.accessCredentials_pk,
         scope
     );
     
